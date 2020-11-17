@@ -1,24 +1,95 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+| Column         | Type    | Options  |
+| -------------- | ------- | -------- |
+| medical_record | integer | NOT NULL |
+| password       | string  | NOT NULL |
 
-* Ruby version
+### Association
+- has_one :basic_information
+- has_many :pets
+- has_many :contacts
+- has_many :funerals
+- has_many :assets
 
-* System dependencies
+## basic_informationテーブル
 
-* Configuration
+| Column          | Type       | Options                    |
+| --------------- | ---------- | -------------------------- |
+| user            | references | NOT NULL, foreign_key:true |
+| last_name       | string     | NOT NULL                   |
+| first_name      | string     | NOT NULL                   |
+| last_name_kana  | string     | NOT NULL                   |
+| first_name_kana | string     | NOT NULL                   |
+| birthday        | date       | NOT NULL                   |
+| address         | text       | NOT NULL                   |
+| domicile        | text       |                            |
+| blood_type_id   | integer    | NOT NULL                   |
 
-* Database creation
+### Association
+- belongs_to :user
+- belongs_to_active_hash :blood_type
 
-* Database initialization
+## petsテーブル
 
-* How to run the test suite
+| Column      | Type       | Options                    |
+| ----------- | ---------- | -------------------------- |
+| user        | references | NOT NULL, foreign_key:true |
+| pet_name    | string     |                            |
+| pet_breed   | string     |                            |
+| pet_age     | integer    |                            |
+| pet_details | text       |                            |
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
+- belongs_to :user
 
-* Deployment instructions
+## contactsテーブル
 
-* ...
+| Column               | Type       | Options                    |
+| -------------------- | ---------- | -------------------------- |
+| user                 | references | NOT NULL, foreign_key:true |
+| acquaintance_name    | string     |                            |
+| acquaintance_contact | integer    |                            |
+| acquaintance_details | text       |                            |
+
+### Association
+- belongs_to :user
+
+## funeralsテーブル
+
+| Column              | Type       | Options                    |
+| ------------------- | ---------- | -------------------------- |
+| user                | references | NOT NULL, foreign_key:true |
+| chief_mourner       | text       |                            |
+| reservation         | string     |                            |
+| religion_id         | integer    |                            |
+| funeral_scale_id    | integer    |                            |
+| funeral_expenses_id | integer    |                            |
+| wake_place_id       | integer    |                            |
+| funeral_place_id    | integer    |                            |
+| burial_place_id     | integer    |                            |
+
+### Association
+- belongs_to :user
+- belongs_to_active_hash :religion
+- belongs_to_active_hash :funeral_scale
+- belongs_to_active_hash :funeral_expenses
+- belongs_to_active_hash :wake_place
+- belongs_to_active_hash :funeral_place
+- belongs_to_active_hash :burial_place
+
+## assetsテーブル
+
+| Column             | Type       | Options                    |
+| ------------------ | ---------- | -------------------------- |
+| user               | references | NOT NULL, foreign_key:true |
+| assets_category_id | integer    |                            |
+| financial          | string     |                            |
+| branch_name        | string     |                            |
+
+### Association
+
+- belongs_to :user
+- belongs_to_active_hash :assets_category
