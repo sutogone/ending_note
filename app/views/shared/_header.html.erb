@@ -1,5 +1,6 @@
 <nav>
   <% if user_signed_in? %>
+    <%= "MedicalRecord_No.#{current_user.medical_record}"%>
     <%= link_to 'トップページ', root_path %>
     <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
   <% else %>
