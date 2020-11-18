@@ -71,6 +71,13 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Medical record is not a number")
       end
+      it "medical_recordが重複していては登録できないこと" do
+        @user.save
+        another_user = FactoryBot.build(:user)
+        another_user.medical_record = @user.medical_record
+        another_user.valid?
+        expect(another_user.errors.full_messages).to include("Medical record has already been taken")
+      end
     end
     
   end
