@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
         
   with_options presence: true do
-  validates :medical_record, numericality: { only_integer: true}
+  validates :medical_record, numericality: { only_integer: true }
   end
 end
