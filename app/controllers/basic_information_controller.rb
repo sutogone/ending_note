@@ -3,15 +3,29 @@ class BasicInformationController < ApplicationController
   def index
     @basic = BasicInformation.all
   end
+
   def new 
     @basic = BasicInformation.new
   end
+
   def create
     @basic = BasicInformation.new(basic_params)
     if @basic.save
       redirect_to user_basic_information_index_path(current_user.id)
     else
       render :new
+    end
+  end
+
+  def edit
+    
+  end
+
+  def update
+    if @basic.update(basic_params)
+      redirect_to user_basic_information_index_path(current_user.id)
+    else
+      render :edit
     end
   end
 
