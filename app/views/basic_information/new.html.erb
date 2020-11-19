@@ -90,4 +90,8 @@
       <%= f.check_box (:blood_type_id, BloodType.all, :id, :type, {}, {class:"check-box", id:"blood_type"}) %>
     </div>
 
+    <div class='buy-btn'>
+      <%= f.submit "登録する" ,class:"buy-red-btn" %>
+    </div>
+
 <% end %>
