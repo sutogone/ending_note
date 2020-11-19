@@ -7,7 +7,7 @@ class BasicInformation < ApplicationRecord
   regex_all = /\A[ぁ-んァ-ン一-龥]/
   regex_kana = /\A[ァ-ヶー－]+\z/
 
-  with_options presence :true do
+  with_options presence: true do
     validates :last_name,                         format: { with: regex_all }
     validates :first_name,                        format: { with: regex_all }
     validates :last_name_kana,                    format: { with: regex_kana }
