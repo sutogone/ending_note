@@ -7,7 +7,12 @@ class BasicInformationController < ApplicationController
     @basic = BasicInformation.new
   end
   def create
-    
+    @basic = BasicInformation.new(basic_params)
+    if @basic.save
+      redirect_to user_basic_information_index_path(current_user.id)
+    else
+      render :new
+    end
   end
 
   private
