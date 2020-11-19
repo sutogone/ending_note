@@ -19,8 +19,11 @@ ActiveRecord::Schema.define(version: 2020_11_18_094239) do
     t.string "last_name_kana", default: "", null: false
     t.string "first_name_kana", default: "", null: false
     t.date "birthday", null: false
-    t.text "address", null: false
-    t.text "domicile"
+    t.string "postal_code", null: false
+    t.integer "prefecture_id", null: false
+    t.string "city", null: false
+    t.string "address", null: false
+    t.string "building"
     t.integer "blood_type_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

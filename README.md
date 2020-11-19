@@ -34,6 +34,7 @@
 ### Association
 - belongs_to :user
 - belongs_to_active_hash :blood_type
+- belongs_to_active_hash :prefecture
 
 ## petsテーブル
 
