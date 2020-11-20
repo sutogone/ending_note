@@ -1,0 +1,6 @@
+<h1>ペット情報へようこそ</h1>
+<%# if @pets == nil %>
+  <%= link_to 'ペットの情報登録', new_user_pet_path %>
+<%# else %>
+  <%= link_to '編集する', edit_user_pet_path(id: current_user.id) %>
+<%# end %>

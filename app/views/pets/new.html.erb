@@ -1,0 +1,49 @@
+<%= form_with model: @pet, url: user_pets_path, local: true do |f| %>
+
+  <%= render 'shared/error_messages', model: f.object %>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">ペットのお名前(全角)</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <div class='input-name-wrap'>
+      <%= f.text_area :pet_name, class:"input-name", id:"pet-name", placeholder:"例) ポチ" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">ペット品種(全角)</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <div class='input-name-wrap'>
+      <%= f.text_field :pet_breed, class:"input-default", id:"pet-breed", placeholder:"例) ビーグル" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">ペットの年齢(半角数字)</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <div class='input-name-wrap'>
+      <%= f.text_field :pet_age, class:"input-default", id:"pet-age", placeholder:"例) 3" %>歳
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">ペットのその他詳細(全角)</label>
+      <span class="indispensable">任意</span>
+    </div>
+    <div class='input-name-wrap'>
+      <%= f.text_area :pet_details, class:"input-default", id:"pet-details", placeholder:"例) ペットの特徴や伝えておきたいことを何でも" %>
+    </div>
+  </div>
+
+  <div class='buy-btn'>
+    <%= f.submit "登録する" ,class:"buy-red-btn" %>
+  </div>
+
+<% end %>

@@ -41,9 +41,9 @@
 | Column      | Type       | Options                    |
 | ----------- | ---------- | -------------------------- |
 | user        | references | NOT NULL, foreign_key:true |
-| pet_name    | string     |                            |
-| pet_breed   | string     |                            |
-| pet_age     | integer    |                            |
+| pet_name    | string     | NOT NULL                   |
+| pet_breed   | string     | NOT NULL                   |
+| pet_age     | integer    | NOT NULL                   |
 | pet_details | text       |                            |
 
 ### Association
@@ -54,8 +54,8 @@
 | Column               | Type       | Options                    |
 | -------------------- | ---------- | -------------------------- |
 | user                 | references | NOT NULL, foreign_key:true |
-| acquaintance_name    | string     |                            |
-| acquaintance_contact | integer    |                            |
+| acquaintance_name    | string     | NOT NULL                   |
+| acquaintance_contact | integer    | NOT NULL                   |
 | acquaintance_details | text       |                            |
 
 ### Association
@@ -66,14 +66,14 @@
 | Column              | Type       | Options                    |
 | ------------------- | ---------- | -------------------------- |
 | user                | references | NOT NULL, foreign_key:true |
-| chief_mourner       | text       |                            |
-| reservation         | string     |                            |
-| religion_id         | integer    |                            |
-| funeral_scale_id    | integer    |                            |
-| funeral_expenses_id | integer    |                            |
-| wake_place_id       | integer    |                            |
-| funeral_place_id    | integer    |                            |
-| burial_place_id     | integer    |                            |
+| chief_mourner       | text       | NOT NULL                   |
+| reservation         | string     | NOT NULL                   |
+| religion_id         | integer    | NOT NULL                   |
+| funeral_scale_id    | integer    | NOT NULL                   |
+| funeral_expenses_id | integer    | NOT NULL                   |
+| wake_place_id       | integer    | NOT NULL                   |
+| funeral_place_id    | integer    | NOT NULL                   |
+| burial_place_id     | integer    | NOT NULL                   |
 
 ### Association
 - belongs_to :user
@@ -89,9 +89,9 @@
 | Column             | Type       | Options                    |
 | ------------------ | ---------- | -------------------------- |
 | user               | references | NOT NULL, foreign_key:true |
-| assets_category_id | integer    |                            |
-| financial          | string     |                            |
-| branch_name        | string     |                            |
+| assets_category_id | integer    | NOT NULL                   |
+| financial          | string     | NOT NULL                   |
+| branch_name        | string     | NOT NULL                   |
 
 ### Association
 
