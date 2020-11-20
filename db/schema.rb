@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2020_11_20_131832) do
   create_table "contacts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.string "acquaintance_name", default: "", null: false
-    t.integer "acquaintance_contact", null: false
+    t.string "acquaintance_contact", null: false
     t.text "acquaintance_details"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
