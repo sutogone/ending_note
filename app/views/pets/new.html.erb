@@ -5,7 +5,7 @@
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">ペットのお名前(全角)</label>
-      <span class="indispensable">任意</span>
+      <span class="indispensable">必須</span>
     </div>
     <div class='input-name-wrap'>
       <%= f.text_area :pet_name, class:"input-name", id:"pet-name", placeholder:"例) ポチ" %>
@@ -15,7 +15,7 @@
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">ペット品種(全角)</label>
-      <span class="indispensable">任意</span>
+      <span class="indispensable">必須</span>
     </div>
     <div class='input-name-wrap'>
       <%= f.text_field :pet_breed, class:"input-default", id:"pet-breed", placeholder:"例) ビーグル" %>
@@ -25,7 +25,7 @@
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">ペットの年齢(半角数字)</label>
-      <span class="indispensable">任意</span>
+      <span class="indispensable">必須</span>
     </div>
     <div class='input-name-wrap'>
       <%= f.text_field :pet_age, class:"input-default", id:"pet-age", placeholder:"例) 3" %>歳
