@@ -14,7 +14,7 @@ class BasicInformation < ApplicationRecord
     validates :first_name_kana,                   format: { with: regex_kana }
     validates :birthday
     validates :postal_code,                       format: {with:/\A\d{3}[-]\d{4}\z/}
-    validates :prefecture_id,                     numericality: { other_than: 1, message: "can't be blank" }
+    validates :prefecture_id,                     numericality: { other_than: 1}
     validates :city
     validates :address
     validates :blood_type_id,                     numericality: true
