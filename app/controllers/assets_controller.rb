@@ -9,7 +9,7 @@ class AssetsController < ApplicationController
   end
 
   def create
-    @asset = Asset.new(pet_params)
+    @asset = Asset.new(asset_params)
     if @asset.save
       redirect_to user_assets_path(current_user.id)
     else
@@ -22,7 +22,7 @@ class AssetsController < ApplicationController
   end
 
   def update
-    if @asset.update(pet_params)
+    if @asset.update(asset_params)
       redirect_to user_assets_path(current_user.id)
     else
       render :edit

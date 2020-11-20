@@ -1,0 +1,6 @@
+<h1>資産情報へようこそ</h1>
+<%# if @basic == nil %>
+  <%= link_to '資産情報登録',  new_user_asset_path %>
+<%# else %>
+  <%= link_to '編集する',  edit_user_asset_path(id: current_user.id) %>
+<%# end %>
