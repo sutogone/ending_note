@@ -3,6 +3,12 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_one :basic_information
+  has_many :pets
+  has_many :contacts
+  has_many :funerals
+  has_many :assets
         
   with_options presence: true do
   validates :medical_record, uniqueness: true, numericality: { only_integer: true }

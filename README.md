@@ -24,13 +24,17 @@
 | last_name_kana  | string     | NOT NULL                   |
 | first_name_kana | string     | NOT NULL                   |
 | birthday        | date       | NOT NULL                   |
-| address         | text       | NOT NULL                   |
-| domicile        | text       |                            |
+| postal_code     | string     | NOT NULL                   |
+| prefecture_id   | integer    | NOT NULL                   |
+| city            | string     | NOT NULL                   |
+| address         | string     | NOT NULL                   |
+| building        | string     |                            |
 | blood_type_id   | integer    | NOT NULL                   |
 
 ### Association
 - belongs_to :user
 - belongs_to_active_hash :blood_type
+- belongs_to_active_hash :prefecture
 
 ## petsテーブル
 
