@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_20_091702) do
+ActiveRecord::Schema.define(version: 2020_11_20_131832) do
 
   create_table "basic_informations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(version: 2020_11_20_091702) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_basic_informations_on_user_id"
+  end
+
+  create_table "contacts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "acquaintance_name", default: "", null: false
+    t.integer "acquaintance_contact", null: false
+    t.text "acquaintance_details"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_contacts_on_user_id"
   end
 
   create_table "pets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -55,5 +65,6 @@ ActiveRecord::Schema.define(version: 2020_11_20_091702) do
   end
 
   add_foreign_key "basic_informations", "users"
+  add_foreign_key "contacts", "users"
   add_foreign_key "pets", "users"
 end
