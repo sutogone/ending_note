@@ -90,7 +90,7 @@
 | ------------------ | ---------- | -------------------------- |
 | user               | references | NOT NULL, foreign_key:true |
 | assets_category_id | integer    | NOT NULL                   |
-| financial          | string     | NOT NULL                   |
+| financial          | string     |                            |
 | assets_details     | text       |                            |
 
 ### Association
