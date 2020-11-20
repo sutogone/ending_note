@@ -1,0 +1,39 @@
+<%= form_with model: @contact, url: user_contact_path, local: true do |f| %>
+
+  <%= render 'shared/error_messages', model: f.object %>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">知人のお名前(全角)</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <div class='input-name-wrap'>
+      <%= f.text_area :acquaintance_name, class:"input-name", id:"acquaintance-name", placeholder:"例) 知人 太郎" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">知人の方の連絡先(半角数字)</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <div class='input-name-wrap'>
+      <%= f.text_field :acquaintance_contact, class:"input-default", id:"acquaintance-contact", placeholder:"例) 09012341234" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">知人の方の詳細(全角)</label>
+      <span class="indispensable">任意</span>
+    </div>
+    <div class='input-name-wrap'>
+      <%= f.text_area :acquaintance_details, class:"input-default", id:"acquaintance-details", placeholder:"例) 知人の方の関係や連絡事項何でも" %>
+    </div>
+  </div>
+
+  <div class='buy-btn'>
+    <%= f.submit "編集" ,class:"buy-red-btn" %>
+  </div>
+
+<% end %>
