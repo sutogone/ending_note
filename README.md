@@ -55,7 +55,7 @@
 | -------------------- | ---------- | -------------------------- |
 | user                 | references | NOT NULL, foreign_key:true |
 | acquaintance_name    | string     | NOT NULL                   |
-| acquaintance_contact | integer    | NOT NULL                   |
+| acquaintance_contact | string     | NOT NULL                   |
 | acquaintance_details | text       |                            |
 
 ### Association

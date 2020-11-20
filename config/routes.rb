@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index] do
     resources :basic_information,         only: [:index, :new, :create, :update, :edit ]
     resources :pets,                      only: [:index, :new, :create, :update, :edit ]
-    #resources :contacts,                 only: [:index, :new, :create, :update, :edit ]
+    resources :contacts,                 only: [:index, :new, :create, :update, :edit ]
     #resources :funerals,                 only: [:index, :new, :create, :update, :edit ]
     #resources :assets,                   only: [:index, :new, :create, :update, :edit ]
   end

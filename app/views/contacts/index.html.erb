@@ -1,0 +1,6 @@
+<h1>知人情報へようこそ</h1>
+<%# if @pets == nil %>
+  <%= link_to '知人の情報登録', new_user_contact_path %>
+<%# else %>
+  <%= link_to '編集する', edit_user_contact_path(id: current_user.id) %>
+<%# end %>
