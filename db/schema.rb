@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_20_182401) do
+ActiveRecord::Schema.define(version: 2020_11_21_141740) do
 
   create_table "assets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -50,6 +50,21 @@ ActiveRecord::Schema.define(version: 2020_11_20_182401) do
     t.index ["user_id"], name: "index_contacts_on_user_id"
   end
 
+  create_table "funerals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.text "chief_mourner", null: false
+    t.string "funerals_details"
+    t.integer "religion_id", null: false
+    t.integer "funeral_scale_id", null: false
+    t.integer "funeral_expenses_id", null: false
+    t.integer "wake_place_id", null: false
+    t.integer "funeral_place_id", null: false
+    t.integer "burial_place_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_funerals_on_user_id"
+  end
+
   create_table "pets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.string "pet_name", default: "", null: false
@@ -77,5 +92,6 @@ ActiveRecord::Schema.define(version: 2020_11_20_182401) do
   add_foreign_key "assets", "users"
   add_foreign_key "basic_informations", "users"
   add_foreign_key "contacts", "users"
+  add_foreign_key "funerals", "users"
   add_foreign_key "pets", "users"
 end

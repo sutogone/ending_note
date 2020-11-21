@@ -67,7 +67,7 @@
 | ------------------- | ---------- | -------------------------- |
 | user                | references | NOT NULL, foreign_key:true |
 | chief_mourner       | text       | NOT NULL                   |
-| reservation         | string     | NOT NULL                   |
+| funerals_details    | string     |                            |
 | religion_id         | integer    | NOT NULL                   |
 | funeral_scale_id    | integer    | NOT NULL                   |
 | funeral_expenses_id | integer    | NOT NULL                   |
