@@ -26,7 +26,6 @@ RSpec.describe Asset, type: :model do
       it "assets_category_idが数字以外では登録できないこと" do
         @asset.assets_category_id = "test"
         @asset.valid?
-        binding.pry
         expect(@asset.errors.full_messages).to include("Assets category is not a number")
       end
     end
