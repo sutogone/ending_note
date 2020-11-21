@@ -1,0 +1,6 @@
+<h1>葬儀・埋葬情報へようこそ</h1>
+<%# if @pets == nil %>
+  <%= link_to '葬儀・埋葬の情報登録', new_user_funeral_path %>
+<%# else %>
+  <%= link_to '編集する', edit_user_funeral_path(id: current_user.id) %>
+<%# end %>
