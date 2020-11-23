@@ -1,34 +1,35 @@
-<h2>患者情報登録</h2>
+<div class="login">
+    <h1>患者情報登録</h1>
+<%= form_with model: @user, url: user_registration_path, class: 'form', local: true do |f| %>
+    <form class="form" method="post" action="#">
 
-<%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+      <p class="field">
+        <%= f.text_field :medical_record, id:"name", autofocus: true, placeholder:"Medical record", autocomplete: "medical_record" %>
+        <i class="fa fa-user"></i>
+      </p>
 
-  <div class="field">
-    <%= f.label :medical_record, "カルテNo." %><br />
-    <%= f.text_field :medical_record, autofocus: true, autocomplete: "medical_record" %>
-  </div>
+      <p class="field">
+        <%= f.email_field :email, id:"name", autofocus: true, placeholder:"Email", autocomplete: "email" %>
+        <i class="fa fa-user"></i>
+      </p>
 
-  <div class="field">
-    <%= f.label :email, "メールアドレス" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+      <p class="field">
+        <%= f.password_field :password, id:"password", placeholder:"password", autocomplete: "new-password" %>
+        <i class="fa fa-lock"></i>
+      </p>
 
-  <div class="field">
-    <%= f.label :password, "パスワード" %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> 文字以上で入力)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+      <p class="field">
+        <%= f.password_field :password_confirmation, id:"password", placeholder:"password_confirmation", autocomplete: "new-password" %>
+        <i class="fa fa-lock"></i>
+      </p>
 
-  <div class="field">
-    <%= f.label :password_confirmation, "パスワードの確認" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+      <p class="submit"><%= f.submit "登録する", id:"sent" %></p>
 
-  <div class="actions">
-    <%= f.submit "登録する" %>
-  </div>
+
+    </form>
+  </div> <!--/ Login-->
 <% end %>
+<div class="copyright">
+    <p>Copyright &copy; 2014. Created by <a href="http://febbygunawan.com" target="_blank">Febby Gunawan</a></p>
 
 <%#= render "devise/shared/links" %>
