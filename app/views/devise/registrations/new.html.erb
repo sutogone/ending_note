@@ -1,3 +1,8 @@
+<head>
+<%= stylesheet_link_tag "users",:media => "all" %>
+</head>
+
+
 <div class="login">
     <h1>患者情報登録</h1>
 <%= form_with model: @user, url: user_registration_path, class: 'form', local: true do |f| %>
