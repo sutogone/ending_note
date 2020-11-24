@@ -22,7 +22,7 @@ $iconhover:#27ae60;
 
 
 body {
-  font: $loginfonts;
+  //font: $loginfonts;
   color: $fontscolor;
   background: $loginbg;
 }
@@ -99,7 +99,7 @@ body {
   color: #fff;
   text-align: center;
   background: $headerbg;
-
+  margin-bottom: 15px;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
@@ -155,8 +155,8 @@ body {
     font-weight: 400;
     padding: 10px 15px 10px 55px;
     position: relative;
-    width: 200px;
-    height: 24px;
+    width: 270px;
+    height: 44px;
     color: #e98b07;
     border: none;
     background: #f7f3eb;

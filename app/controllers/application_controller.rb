@@ -11,5 +11,7 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.permit(:sign_in,keys:[:medical_record])
     end
 
-    def login_check
+    def after_sign_in_path_for(resource)
+      users_path
+    end
 end

@@ -1,5 +1,5 @@
 nav{
-  padding: 10px 10px;
+  //padding: 10px 10px;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
@@ -19,14 +19,15 @@ nav{
   font-family: 'Times New Roman',sans-serif;
   font-size: 25px;
   justify-content: space-between;
-  padding: 10px 30px 10px 10px;
+  padding: 20px;
 }
 
-.logo{
+.ending-logo{
   font-size: 40px;
   font-family: 'Times New Roman',sans-serif;
   color: #111111;
   text-decoration: none;
+  padding: 10px 10px;
   //margin:10px 10px 10px 10px;
 }
 
@@ -41,6 +42,7 @@ nav{
   background: #72dfa3;
   transition: .4s;
   border-radius: 10px;
+  padding: 10px 10px;
 }
 .sign{
   padding-top: 10px;
@@ -57,6 +59,8 @@ nav{
   background: #72dfa3;
   transition: .4s;
   border-radius: 10px;
+  padding: 10px 10px;
+  margin-right: 10px;
 }
 
 .top-logo:hover{

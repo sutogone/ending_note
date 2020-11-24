@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: "users#index"
+
+  devise_scope :user do
+    root "devise/sessions#new"
+  end
+  devise_for :users, :controllers =>{
+    sessions: 'devise/sessions'
+  }
+  
   resources :users, only: [:index] do
     resources :basic_information,         only: [:index, :new, :create, :update, :edit ]
     resources :pets,                      only: [:index, :new, :create, :update, :edit ]
