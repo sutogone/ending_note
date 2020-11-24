@@ -51,6 +51,14 @@ p{
   outline: none;
 }
 
+.input-details{
+  resize: none;
+  width: 500px;
+  height: 90px;
+  font-size: 20px;
+  outline: none;
+}
+
 select{
   font-size: 20px;
   border-bottom: solid 1px grey;
@@ -67,9 +75,24 @@ select{
   margin-right: auto;
 }
 
+.form-child-bigger{
+  background-color: #ffffff;
+  width: 1200px;
+  border-radius: 30px;
+  overflow: hidden;
+  padding: 42px 55px 45px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .blood-type{
   font-size: 20px;
   display: inline; 
+}
+
+.radio-str{
+  font-size: 20px;
+  display: inline;
 }
 
 .buy-btn{
