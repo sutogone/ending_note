@@ -1,39 +1,43 @@
+<%= stylesheet_link_tag "reset",:media => "all" %>
+<%= stylesheet_link_tag "basic_information",:media => "all" %>
+<div class="form">
 <%= form_with model: @asset, url: user_asset_path, local: true do |f| %>
 
   <%= render 'shared/error_messages', model: f.object %>
+  <div class="form-child">
+    <div class="information">資産情報編集フォーム</div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">資産の種類</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <div class='input-name-wrap'>
+          <%= f.collection_select(:assets_category_id, AssetsCategory.all, :id, :category, {}, {class:"select-box", id:"assets_category"}) %>
+        </div>
+      </div>
 
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">資産の種類</label>
-      <span class="indispensable">必須</span>
-    </div>
-    <div class='input-name-wrap'>
-      <%= f.collection_select(:assets_category_id, AssetsCategory.all, :id, :category, {}, {class:"select-box", id:"assets_category"}) %>
-    </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">金融機関名(全角)</label>
+          <span class="indispensable">任意</span>
+        </div>
+        <div class='input-name-wrap'>
+          <%= f.text_field :financial, class:"input-default", id:"financial", placeholder:"例) 〇〇銀行" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">資産についての詳細</label>
+          <span class="indispensable">任意</span>
+        </div>
+        <div class='input-name-wrap'>
+          <%= f.text_area :assets_details, class:"input-details", id:"assets-details", placeholder:"例) 資産についての補足事項等を入力" %>
+        </div>
+      </div>
+
+      <div class='buy-btn'>
+        <%= f.submit "編集する" ,class:"buy-red-btn" %>
+      </div>
   </div>
-
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">金融機関名(全角)</label>
-      <span class="indispensable">任意</span>
-    </div>
-    <div class='input-name-wrap'>
-      <%= f.text_field :financial, class:"input-default", id:"financial", placeholder:"例) 〇〇銀行" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">資産についての詳細</label>
-      <span class="indispensable">任意</span>
-    </div>
-    <div class='input-name-wrap'>
-      <%= f.text_area :assets_details, class:"input-default", id:"assets-details", placeholder:"例) 資産についての補足事項等を入力" %>
-    </div>
-  </div>
-
-  <div class='buy-btn'>
-    <%= f.submit "編集" ,class:"buy-red-btn" %>
-  </div>
-
 <% end %>
