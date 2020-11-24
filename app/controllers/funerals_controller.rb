@@ -1,4 +1,5 @@
 class FuneralsController < ApplicationController
+  before_action :authenticate_user!, only: [:new,:edit]
   before_action :set_funeral, only: [:edit,:update]
   def index
     @funerals = Funeral.includes(:user).order(created_at: :desc)

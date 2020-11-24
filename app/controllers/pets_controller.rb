@@ -1,4 +1,5 @@
 class PetsController < ApplicationController
+  before_action :authenticate_user!, only: [:new,:edit]
   before_action :set_pet, only: [:edit,:update]
   def index
     @pets = Pet.includes(:user).order(created_at: :desc)

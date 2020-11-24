@@ -1,4 +1,5 @@
 class BasicInformationController < ApplicationController
+  before_action :authenticate_user!, only: [:new,:edit]
   before_action :set_basic, only: [:edit,:update]
   def index
     @basic = BasicInformation.all
