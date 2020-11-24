@@ -1,3 +1,92 @@
 // Place all the styles related to the basic_information controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+p{
+  display: inline-block;
+  font-size: 20px;
+  padding-right: 10px;
+}
+
+.form{
+  background-color: #afeecb;
+  text-align: center;
+  height: 1000px;
+  padding-top: 100px;
+  
+}
+
+.form-group{
+  width: 70%;
+  margin: auto;
+  padding-top: 10px;
+  
+}
+
+.indispensable{
+  background-color: #fd3636;
+  color: #ffffff;
+  border-radius: 30px;
+  size: 15px;
+}
+
+.information{
+  font-size: 30px;
+  font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif;
+}
+
+.input-name{
+  resize: none;
+  width: 200px;
+  height: 30px;
+  font-size: 20px;
+  border-bottom: solid 1px grey;
+  outline: none;
+}
+
+.input-default{
+  width: 200px;
+  height: 30px;
+  font-size: 20px;
+  border-bottom: solid 1px grey;
+  outline: none;
+}
+
+select{
+  font-size: 20px;
+  border-bottom: solid 1px grey;
+  outline: none;
+}
+
+.form-child{
+  background-color: #ffffff;
+  width: 700px;
+  border-radius: 30px;
+  overflow: hidden;
+  padding: 42px 55px 45px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blood-type{
+  font-size: 20px;
+  display: inline; 
+}
+
+.buy-btn{
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #72dfa3;
+  background: #ffffff;
+  transition: .4s;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.buy-btn:hover{
+  background: #43fd97;
+  color: white;
+}
