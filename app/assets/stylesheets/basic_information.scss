@@ -41,6 +41,7 @@ p{
   font-size: 20px;
   border-bottom: solid 1px grey;
   outline: none;
+  text-align: center;
 }
 
 .input-default{
@@ -49,6 +50,7 @@ p{
   font-size: 20px;
   border-bottom: solid 1px grey;
   outline: none;
+  text-align: center;
 }
 
 .input-details{
@@ -57,6 +59,16 @@ p{
   height: 90px;
   font-size: 20px;
   outline: none;
+}
+
+.input-age{
+  resize: none;
+  width: 100px;
+  height: 30px;
+  font-size: 20px;
+  border-bottom: solid 1px grey;
+  outline: none;
+  text-align: center;
 }
 
 select{
