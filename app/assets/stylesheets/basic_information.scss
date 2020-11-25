@@ -10,8 +10,9 @@ p{
 .form{
   background-color: #afeecb;
   text-align: center;
-  height: 1200px;
+  height: auto;
   padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 .form-group{
@@ -178,4 +179,37 @@ select{
   font-size: 30px;
   border-bottom: solid 1px grey;
   margin: auto;
+}
+
+.output-details-wrap{
+  font-size: 20px;
+}
+
+.age{
+  font-size: inherit;
+}
+
+.new-btn{
+  text-align: center;
+  position: relative;
+  display: block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #72dfa3;
+  background: #ffffff;
+  transition: .4s;
+  
+  font-size: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.new-btn:hover{
+  background: #43fd97;
+  color: white;
+}
+
+.new-information{
+  background-color: #afeecb;
 }

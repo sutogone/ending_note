@@ -1,6 +1,51 @@
-<h1>ペット情報へようこそ</h1>
-<%# if @pets == nil %>
-  <%= link_to 'ペットの情報登録', new_user_pet_path %>
-<%# else %>
-  <%= link_to '編集する', edit_user_pet_path(id: current_user.id) %>
-<%# end %>
+<%= stylesheet_link_tag "basic_information",:media => "all" %>
+<div class="new-information">
+  <%= link_to 'ペットの情報登録', new_user_pet_path, {class: "new-btn"} %>
+</div>
+<% @pets.each do |pets| %>
+<div class="form">
+  <div class="form-child">
+    <div class="information">ペット</div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">ペットのお名前</label>
+        </div>
+        <div class='output-name-wrap'>
+          <%= pets.pet_name %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">ペット品種</label>
+        </div>
+        <div class='output-name-wrap'>
+          <%= pets.pet_breed %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">ペットの年齢</label>
+        </div>
+        <div class='output-name-wrap'>
+          <%= pets.pet_age %><p class="age">歳</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">ペットのその他詳細</label>
+        </div>
+        <div class='output-details-wrap'>
+          <%= pets.pet_details %>
+        </div>
+      </div>
+
+    <div class="input-btns">
+      <%= link_to '編集する', edit_user_pet_path(id: current_user.id), {class: "input-btn"} %>
+    </div>
+
+  </div>
+</div>
+<% end %>
