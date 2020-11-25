@@ -1,6 +1,41 @@
-<h1>知人情報へようこそ</h1>
-<%# if @pets == nil %>
-  <%= link_to '知人の情報登録', new_user_contact_path %>
-<%# else %>
-  <%= link_to '編集する', edit_user_contact_path(id: current_user.id) %>
-<%# end %>
+<%= stylesheet_link_tag "basic_information",:media => "all" %>
+<div class="new-information">
+  <%= link_to '知人・友人の方の情報登録', new_user_contact_path, {class: "new-btn"} %>
+</div>
+<% @contacts.each do |contacts| %>
+<div class="form">
+  <div class="form-child">
+    <div class="information">友人・知人の方</div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">知人・友人のお名前</label>
+        </div>
+        <div class='output-name-wrap'>
+          <%= contacts.acquaintance_name %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">知人・友人の方の連絡先</label>
+        </div>
+        <div class='output-name-wrap'>
+          <%= contacts.acquaintance_contact %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">知人・友人の方の詳細</label>
+        </div>
+        <div class='output-details-wrap'>
+          <%= contacts.acquaintance_details %>
+        </div>
+      </div>
+
+      <div class='input-btns'>
+        <%= link_to '編集する', edit_user_contact_path(id: current_user.id), {class: "input-btn"} %>
+      </div>
+    </div>
+</div>
+<% end %>
