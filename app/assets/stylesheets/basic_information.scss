@@ -10,9 +10,8 @@ p{
 .form{
   background-color: #afeecb;
   text-align: center;
-  height: 1000px;
+  height: 1200px;
   padding-top: 100px;
-  
 }
 
 .form-group{
@@ -124,4 +123,59 @@ select{
 .buy-btn:hover{
   background: #43fd97;
   color: white;
+}
+
+.nav-link{
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #72dfa3;
+  background: #ffffff;
+  transition: .4s;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.nav-link:hover{
+  background: #43fd97;
+  color: white;
+}
+
+.input-btn{
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #72dfa3;
+  background: #ffffff;
+  transition: .4s;
+  border-radius: 10px;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.input-btn:hover{
+  background: #43fd97;
+  color: white;
+}
+
+.output-name-wrap{
+  width: 250px;
+  height: 50px;
+  font-size: 30px;
+  border-bottom: solid 1px grey;
+  margin: auto;
+}
+
+.output-birth-wrap{
+  width: 250px;
+  height: 50px;
+  font-size: 30px;
+  border-bottom: solid 1px grey;
+  margin: auto;
 }
