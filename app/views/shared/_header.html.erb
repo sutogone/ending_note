@@ -8,11 +8,11 @@
       <div class= "medical-record">
         <%= "MedicalRecord No.#{current_user.medical_record}" %>
       </div>
+    </div>
       <div class="sign">
         <%= link_to 'トップページ', root_path, class: "top-logo"  %>
         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "sign-logo"  %>
       </div>
-    </div>
     <% else %>
     <div class="sign">
         <%= link_to 'サインアップ', new_user_registration_path, class: "sign-logo"  %>
