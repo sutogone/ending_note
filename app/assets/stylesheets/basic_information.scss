@@ -10,6 +10,14 @@ p{
 .form{
   background-color: #afeecb;
   text-align: center;
+  height: 80vh;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.has-one-form{
+  background-color: #afeecb;
+  text-align: center;
   height: auto;
   padding-top: 100px;
   padding-bottom: 100px;
@@ -131,13 +139,16 @@ select{
   position: relative;
   display: inline-block;
   font-weight: bold;
-  padding: 0.25em 0.5em;
+  padding: 0.25em 1.2em;
   text-decoration: none;
-  color: #72dfa3;
-  background: #ffffff;
+  color: #68c793;
+  //background: #ffffff;
   transition: .4s;
   border-radius: 10px;
-  font-size: 20px;
+  font-size: 50px;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
 }
 
 .nav-link:hover{
@@ -164,7 +175,9 @@ select{
   background: #43fd97;
   color: white;
 }
+//各登録フォームで使用
 
+//各登録フォームのindexで使用
 .output-name-wrap{
   width: 300px;
   height: 50px;
@@ -184,6 +197,7 @@ select{
 .output-details-wrap{
   font-size: 20px;
 }
+//ここまで各登録フォームのindexで使用
 
 .age{
   font-size: inherit;
@@ -213,3 +227,20 @@ select{
 .new-information{
   background-color: #afeecb;
 }
+
+//user.index
+
+.any-info{
+  height: 100vh;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  text-align: center;
+  background: #AAFFA9;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #11FFBD, #AAFFA9);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #11FFBD, #AAFFA9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
+//user.index
