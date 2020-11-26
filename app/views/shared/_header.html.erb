@@ -1,11 +1,23 @@
-<nav>
-  <% if user_signed_in? %>
-    <%= "MedicalRecord_No.#{current_user.medical_record}"%>
-    <%= link_to 'トップページ', root_path %>
-    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-  <% else %>
-    <%= link_to 'トップページ', root_path %>
-    <%= link_to 'サインアップ', new_user_registration_path %>
-    <%= link_to 'ログイン', new_user_session_path %>
-  <% end %>
-</nav>
+<%= stylesheet_link_tag "reset",:media => "all" %>
+<%= stylesheet_link_tag "header",:media => "all" %>
+<div class="header-form">
+  <nav>
+    <%= link_to 'Ending note', root_path, class: "ending-logo" %>
+    <% if user_signed_in? %>
+    <div class= "sign-bundle">
+      <div class= "medical-record">
+        <%= "MedicalRecord No.#{current_user.medical_record}" %>
+      </div>
+    </div>
+      <div class="sign">
+        <%= link_to 'トップページ', root_path, class: "top-logo"  %>
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "sign-logo"  %>
+      </div>
+    <% else %>
+    <div class="sign">
+        <%= link_to 'サインアップ', new_user_registration_path, class: "sign-logo"  %>
+        <%= link_to 'ログイン', new_user_session_path, class: "sign-logo"  %>
+    </div>
+    <% end %>
+  </nav>
+</div>

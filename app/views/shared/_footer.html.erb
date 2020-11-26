@@ -1,1 +1,19 @@
-<p>footer</p>
+<%= stylesheet_link_tag "footer",:media => "all" %>
+<div class='footer'>
+  <div class='footer-contents'>
+    <div class="sub-title">Ending note</div>
+    <div class='ending-details'>
+      <h2 class='footer-content-head'>Ending noteについて</h2>
+      <ul>
+        <li><%= link_to '病院概要', "#", class: "ending-link" %></li>
+        <li><%= link_to 'プライバシーポリシー', "#", class: "ending-link" %></li>
+        <li><%= link_to 'Ending note利用規約', "#", class: "ending-link" %></li>
+        <li><%= link_to 'Ending noteガイド', "#", class: "ending-link" %></li>
+        <li><%= link_to 'お知らせ', "#", class: "ending-link" %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="created-box">
+    <p class="created">Created By Kousuke Tokashiki</p>
+  </div>
+</div>

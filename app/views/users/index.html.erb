@@ -1,6 +1,22 @@
-<h1>index</h1>
-<%= link_to 'ご自身の基本情報', user_basic_information_index_path(current_user.id) %>
-<%= link_to 'ペットのこと', user_pets_path(current_user.id) %>
-<%= link_to '友人・知人の連絡先' , user_contacts_path(current_user.id) %>
-<%= link_to '葬儀・埋葬のこと', user_funerals_path(current_user.id) %>
-<%= link_to '資産のこと', user_assets_path(current_user.id) %>
+<%= stylesheet_link_tag "basic_information",:media => "all" %>
+  <div class="any-info">
+    <!--<div class="info-a">-->
+    <%= link_to 'ご自身の基本情報', user_basic_information_index_path(current_user.id), {class: "nav-link"} %>
+    <!--</div>-->
+
+    <!--<div class="info-b">-->
+    <%= link_to 'ペットのこと', user_pets_path(current_user.id), {class: "nav-link"} %>
+    <!--</div>-->
+
+    <!--<div class="info-c">-->
+    <%= link_to '友人・知人の連絡先' , user_contacts_path(current_user.id), {class: "nav-link"} %>
+    <!--</div>-->
+
+    <!--<div class="info-d">-->
+    <%= link_to '葬儀・埋葬のこと', user_funerals_path(current_user.id), {class: "nav-link"} %>
+    <!--</div>-->
+
+    <!--<div class="info-e">-->
+    <%= link_to '資産のこと', user_assets_path(current_user.id), {class: "nav-link"} %>
+    <!--</div>-->
+  </div>

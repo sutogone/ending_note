@@ -1,6 +1,86 @@
-<h1>葬儀・埋葬情報へようこそ</h1>
-<%# if @pets == nil %>
-  <%= link_to '葬儀・埋葬の情報登録', new_user_funeral_path %>
-<%# else %>
-  <%= link_to '編集する', edit_user_funeral_path(id: current_user.id) %>
-<%# end %>
+<%= stylesheet_link_tag "basic_information",:media => "all" %>
+<% @funerals.each do |funerals| %>
+<div class="has-one-form">
+  <div class="form-child">
+    <div class="information">葬儀・埋葬に関して</div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">喪主名</label>
+        </div>
+        <div class='output-name-wrap'>
+          <%= funerals.chief_mourner %>
+        </div>
+      </div>
+
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">ご自身の信仰している宗教</label>
+          </div>
+          <div class='output-name-wrap'>
+            <%= funerals.religion.religion %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">お通夜の場所</label>
+          </div>
+          <div class='output-name-wrap'>
+            <%= funerals.wake_place.place %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">葬儀・告別式の場所</label>
+          </div>
+          <div class='output-name-wrap'>
+            <%= funerals.funeral_place.plase %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">葬儀の規模</label>
+          </div>
+          <div class='output-name-wrap'>
+            <%= funerals.funeral_scale.scale %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">葬儀費用</label>
+          </div>
+          <div class='output-name-wrap'>
+            <%= funerals.funeral_expenses.category %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">埋葬場所</label>
+          </div>
+          <div class='output-name-wrap'>
+            <%= funerals.burial_place.place %>
+          </div>
+        </div>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">葬儀・埋葬詳細</label>
+        </div>
+        <div class='output-details-wrap'>
+          <%= funerals.funerals_details %>
+        </div>
+      </div>
+
+    <% if funerals == nil %>
+      <%= link_to '葬儀・埋葬の情報登録', new_user_funeral_path, {class: "input-btn"} %>
+    <% else %>
+      <%= link_to '編集する', edit_user_funeral_path(id: current_user.id), {class: "input-btn"} %>
+    <% end %>
+
+  </div>
+</div>
+<% end %>

@@ -1,98 +1,102 @@
+<%= stylesheet_link_tag "basic_information",:media => "all" %>
+<div class="form">
 <%= form_with model: @funeral, url: user_funeral_path, local: true do |f| %>
 
   <%= render 'shared/error_messages', model: f.object %>
+  <div class="form-child-bigger">
+    <div class="information">葬儀・埋葬情報編集フォーム</div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">喪主名(全角)</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <div class='input-name-wrap'>
+          <%= f.text_area :chief_mourner, class:"input-name", id:"chief-mourner", placeholder:"例) 喪主三郎" %>
+        </div>
+      </div>
 
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">喪主名(全角)</label>
-      <span class="indispensable">必須</span>
-    </div>
-    <div class='input-name-wrap'>
-      <%= f.text_area :chief_mourner, class:"input-name", id:"chief-mourner", placeholder:"例) 喪主三郎" %>
-    </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">ご自身の信仰している宗教</label>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.radio_button :religion_id, 1, checked: true %><div class="radio-str">仏教</div>
+          <%= f.radio_button :religion_id, 2%><div class="radio-str">神式</div>
+          <%= f.radio_button :religion_id, 3%><div class="radio-str">キリスト教</div>
+          <%= f.radio_button :religion_id, 4%><div class="radio-str">イスラム教</div>
+          <%= f.radio_button :religion_id, 5%><div class="radio-str">無宗教</div>
+          <%= f.radio_button :religion_id, 6%><div class="radio-str">その他</div>
+        </div>
+
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">お通夜の場所</label>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.radio_button :wake_place_id, 1, checked: true %><div class="radio-str">自宅</div>
+          <%= f.radio_button :wake_place_id, 2%><div class="radio-str">斎場</div>
+          <%= f.radio_button :wake_place_id, 3%><div class="radio-str">ホテル</div>
+          <%= f.radio_button :wake_place_id, 4%><div class="radio-str">その他</div>
+        </div>
+
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">葬儀・告別式の場所</label>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.radio_button :funeral_place_id, 1, checked: true %><div class="radio-str">自宅</div>
+          <%= f.radio_button :funeral_place_id, 2%><div class="radio-str">斎場</div>
+          <%= f.radio_button :funeral_place_id, 3%><div class="radio-str">ホテル</div>
+          <%= f.radio_button :funeral_place_id, 4%><div class="radio-str">その他</div>
+        </div>
+
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">葬儀の規模</label>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.radio_button :funeral_scale_id, 1, checked: true %><div class="radio-str">密葬</div>
+          <%= f.radio_button :funeral_scale_id, 2%><div class="radio-str">家族葬</div>
+          <%= f.radio_button :funeral_scale_id, 3%><div class="radio-str">一般葬</div>
+          <%= f.radio_button :funeral_scale_id, 4%><div class="radio-str">社葬</div>
+          <%= f.radio_button :funeral_scale_id, 5%><div class="radio-str">葬儀不要</div>
+        </div>
+
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">葬儀費用</label>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.radio_button :funeral_expenses_id, 1, checked: true %><div class="radio-str">私の預貯金で支払い</div>
+          <%= f.radio_button :funeral_expenses_id, 2%><div class="radio-str">家族に任せます</div>
+        </div>
+
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">埋葬場所</label>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.radio_button :burial_place_id, 1, checked: true %><div class="radio-str">先祖代々の墓へ納骨</div>
+          <%= f.radio_button :burial_place_id, 2%><div class="radio-str">新しい墓へ納骨</div>
+          <%= f.radio_button :burial_place_id, 3%><div class="radio-str">永代供養</div>
+          <%= f.radio_button :burial_place_id, 4%><div class="radio-str">散骨</div>
+          <%= f.radio_button :burial_place_id, 5%><div class="radio-str">樹木葬</div>
+          <%= f.radio_button :burial_place_id, 6%><div class="radio-str">希望なし</div>
+        </div>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">葬儀・埋葬詳細(全角)</label>
+          <span class="form-any">任意</span>
+        </div>
+        <div class='input-name-wrap'>
+          <%= f.text_area :funerals_details, class:"input-details", id:"funerals-details", placeholder:"例) 葬儀・埋葬に関して補足事項がありましたらご入力ください。" %>
+        </div>
+      </div>
+
+        <div class='buy-btn'>
+          <%= f.submit "編集する" ,class:"buy-red-btn" %>
+        </div>
   </div>
-
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <label class="form-text">ご自身の信仰している宗教</label>
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.radio_button :religion_id, 1, checked: true %>仏教
-      <%= f.radio_button :religion_id, 2%>神式
-      <%= f.radio_button :religion_id, 3%>キリスト教
-      <%= f.radio_button :religion_id, 4%>イスラム教
-      <%= f.radio_button :religion_id, 5%>無宗教
-      <%= f.radio_button :religion_id, 6%>その他
-    </div>
-
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <label class="form-text">お通夜の場所</label>
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.radio_button :wake_place_id, 1, checked: true %>自宅
-      <%= f.radio_button :wake_place_id, 2%>斎場
-      <%= f.radio_button :wake_place_id, 3%>ホテル
-      <%= f.radio_button :wake_place_id, 4%>その他
-    </div>
-
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <label class="form-text">葬儀・告別式の場所</label>
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.radio_button :funeral_place_id, 1, checked: true %>自宅
-      <%= f.radio_button :funeral_place_id, 2%>斎場
-      <%= f.radio_button :funeral_place_id, 3%>ホテル
-      <%= f.radio_button :funeral_place_id, 4%>その他
-    </div>
-
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <label class="form-text">葬儀の規模</label>
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.radio_button :funeral_scale_id, 1, checked: true %>密葬
-      <%= f.radio_button :funeral_scale_id, 2%>家族葬
-      <%= f.radio_button :funeral_scale_id, 3%>一般葬
-      <%= f.radio_button :funeral_scale_id, 4%>社葬
-      <%= f.radio_button :funeral_scale_id, 5%>葬儀不要
-    </div>
-
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <label class="form-text">葬儀費用</label>
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.radio_button :funeral_expenses_id, 1, checked: true %>私の預貯金で支払い
-      <%= f.radio_button :funeral_expenses_id, 2%>家族に任せます
-    </div>
-
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <label class="form-text">埋葬場所</label>
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.radio_button :burial_place_id, 1, checked: true %>先祖代々の墓へ納骨
-      <%= f.radio_button :burial_place_id, 2%>新しい墓へ納骨
-      <%= f.radio_button :burial_place_id, 3%>永代供養
-      <%= f.radio_button :burial_place_id, 4%>散骨
-      <%= f.radio_button :burial_place_id, 5%>樹木葬
-      <%= f.radio_button :burial_place_id, 6%>希望なし
-    </div>
-
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">葬儀・埋葬詳細(全角)</label>
-      <span class="indispensable">任意</span>
-    </div>
-    <div class='input-name-wrap'>
-      <%= f.text_area :funerals_details, class:"input-name", id:"funerals-details", placeholder:"例) 葬儀・埋葬に関しての補足事項" %>
-    </div>
-  </div>
-
-    <div class='buy-btn'>
-      <%= f.submit "登録する" ,class:"buy-red-btn" %>
-    </div>
-
+</div>
 <% end %>

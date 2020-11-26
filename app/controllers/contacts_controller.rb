@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+  before_action :authenticate_user!, only: [:new,:edit]
   before_action :set_contact, only: [:edit,:update]
   def index
     @contacts = Contact.includes(:user).order(created_at: :desc)
