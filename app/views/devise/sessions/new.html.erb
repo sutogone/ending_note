@@ -4,7 +4,6 @@
 <div class="login">
     <h1>ログイン</h1>
 <%= form_with model: @user, url: new_user_session_path, class: 'form', local: true do |f| %>
-    <form class="form" method="post" action="#">
 
       <p class="field">
         <%= f.text_field :medical_record, id:"name", autofocus: true, placeholder:"Medical record", autocomplete: "medical_record" %>
@@ -18,10 +17,8 @@
 
       <p class="submit"><%= f.submit "ログイン", id:"sent" %></p>
 
-    </form>
-  </div> <!--/ Login-->
-<% end %>
-<div class="copyright">
+</div> 
+  <div class="copyright">
     <p>Copyright &copy; 2014. Created by <a href="http://febbygunawan.com" target="_blank">Febby Gunawan</a></p>
-
-<%#= render "devise/shared/links" %>
+  </div> 
+<% end %>

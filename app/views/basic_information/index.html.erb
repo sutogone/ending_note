@@ -82,18 +82,16 @@
               <label class="form-text">血液型</label>
             </div>
             <div class='output-name-wrap'>
-            <%= basic.blood_type.type %>
+              <%= basic.blood_type.type %>
+            </div>
           </div>
-
     <% if basic == nil %>
       <%= link_to '基本情報登録', new_user_basic_information_path, {class: "input-btn"} %>
     <% else %>
       <%= link_to '編集する', edit_user_basic_information_path(id: current_user.id), {class: "input-btn"} %>
     <% end %>
   </div>
-
 </div>
-
 <% end %>
 
 
