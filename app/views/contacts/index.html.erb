@@ -3,6 +3,7 @@
   <%= link_to '知人・友人の方の情報登録', new_user_contact_path, {class: "new-btn"} %>
 </div>
 <% @contacts.each do |contacts| %>
+<% if contacts.user_id == current_user.id %>
 <div class="form">
   <div class="form-child">
     <div class="information">友人・知人の方</div>
@@ -38,4 +39,5 @@
       </div>
     </div>
 </div>
+<% end %>
 <% end %>

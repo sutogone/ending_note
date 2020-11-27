@@ -3,6 +3,7 @@
   <%= link_to '資産情報登録', new_user_asset_path, {class: "new-btn"} %>
 </div>
 <% @assets.each do |assets| %>
+<% if assets.user_id == current_user.id %>
 <div class="form">
   <div class="form-child">
     <div class="information">資産情報</div>
@@ -38,4 +39,5 @@
       </div>
   </div>
 </div>
+<% end %>
 <% end %>

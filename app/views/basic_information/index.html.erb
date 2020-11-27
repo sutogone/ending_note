@@ -1,5 +1,6 @@
 <%= stylesheet_link_tag "basic_information",:media => "all" %>
 <% @basic.each do |basic| %>
+<% if basic.user_id == current_user.id %>
 <div class="has-one-form">
   <div class="form-child">
       <div class="information">基本情報</div>
@@ -85,13 +86,10 @@
               <%= basic.blood_type.type %>
             </div>
           </div>
-    <% if basic == nil %>
-      <%= link_to '基本情報登録', new_user_basic_information_path, {class: "input-btn"} %>
-    <% else %>
-      <%= link_to '編集する', edit_user_basic_information_path(id: current_user.id), {class: "input-btn"} %>
-    <% end %>
+          <%= link_to '編集する', edit_user_basic_information_path(id: current_user.id), {class: "input-btn"} %>
   </div>
 </div>
+<% else %>
+<%= link_to '基本情報登録', new_user_basic_information_path, {class: "new-btn"} %>
 <% end %>
-
-
+<% end %>
