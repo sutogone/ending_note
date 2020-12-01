@@ -1,5 +1,4 @@
 <%= stylesheet_link_tag "basic_information",:media => "all" %>
-<%= link_to '葬儀・埋葬の情報登録', new_user_funeral_path, {class: "new-btn"} %>
 <% @funerals.each do |funerals| %>
 <% if funerals.user_id == current_user.id %>
 <div class="has-one-form">
@@ -79,5 +78,7 @@
       <%= link_to '編集する', edit_user_funeral_path(id: current_user.id), {class: "input-btn"} %>
   </div>
 </div>
+<% else %>
+<%= link_to '葬儀・埋葬の情報登録', new_user_funeral_path, {class: "new-btn"} %>
 <% end %>
 <% end %>
