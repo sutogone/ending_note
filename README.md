@@ -38,7 +38,7 @@ http://54.150.2.68/
 - ストーリー:スマホ、タブレットでサイトを覗いてもおかしな余白等が生まれない様にする
 # データベース設計
 ## ER図
-
+![ER図](app/assets/images/ending-1.png "ER")
 ## usersテーブル
 
 | Column         | Type    | Options  |
