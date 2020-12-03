@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: ending_note_production
-  username: ending_note
-  password: <%= ENV['ENDING_NOTE_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
