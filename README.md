@@ -1,12 +1,14 @@
 # Ending note
 # アプリケーション概要
 病院などの閉鎖されたネットワークでの利用を想定した電子版エンディングノート。
-# 環境
+# 開発環境
 - Ruby 2.6.5
 - Ruby On Rails 6.0.0
 - WebPacker 4.3.0
-# デプロイ
-AWSを用いてのデプロイ
+- AWS EC2
+- Unicorn
+- Capistrano
+- VScode
 # URL
 http://54.150.2.68/
 # 閲覧用アカウント
