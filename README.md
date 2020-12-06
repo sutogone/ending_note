@@ -2,13 +2,29 @@
 # アプリケーション概要
 病院などの閉鎖されたネットワークでの利用を想定した電子版エンディングノート。
 # 開発環境
+## バックエンド
 - Ruby 2.6.5
 - Ruby On Rails 6.0.0
-- WebPacker 4.3.0
-- AWS EC2
-- Unicorn
+## フロントエンド
+- HTML
+- Sass
+## データベース
+- MySQL
+- SequelPro
+## インフラ
+- AWS(EC2)
 - Capistrano
-- VScode
+## webサーバー(本番環境)
+- nginx
+## アプリケーションサーバー(本番環境)
+- unicorn
+## ソース管理
+- GitHub
+- GitHubDesktop
+## テスト
+- Rspec
+## エディタ
+- VSCode
 # URL
 http://54.150.2.68/
 # 閲覧用アカウント
